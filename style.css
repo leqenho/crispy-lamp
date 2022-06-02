@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
+:root {
+  --black: hsl(240, 4%, 16%);
+  --black-100: hsl(240, 4%, 46%);
+  --gray: hsl(0, 0%, 77%);
+  --orange: hsl(20, 100%, 70%);
+  --pink: hsl(359, 100%, 68%);
+
+  --color-default: var(--black);
+  --color-secondary: var(--black-100);
+  --bg-gradient: linear-gradient(45deg, var(--orange), var(--pink));
+
+  --font-default: "Inter", sans-serif;
+  --button-secondary-bg: var(--gray);
+
+  --header-height: 68px;
+
+  --header-space: calc(var(--header-height) + 2rem);
+}
+
+@media (min-width: 576px) {
+  :root {
+    --element-width: 540px / 1.5;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --element-width: 720px / 1.5;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --element-width: 960px / 1.5;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --element-width: 1140px / 1.5;
+  }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --element-width: 1320px / 1.5;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  color: var(--color-default);
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
+}
+
+[class*=fa] {
+  font-size: 24px;
+}
+
+.nav-link {
+  color: currentColor;
+  gap: 1.5rem;
+  display: flex;
+  font-size: 1.3rem;
+  align-items: center;
+}
+
+.nav-link > i {
+  width: 30px;
+}
+
+header > nav.navbar a {
+  color: currentColor;
+}
+
+section {
+  display: flex;
+  padding: var(--header-space) 0 0;
+}
+
+@media (min-width: 992px) {
+  .d-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+a:not(#sobre a) {
+  text-decoration: none;
+}
+
+.mt-n4:not(:last-child) {
+  margin-top: -1.5rem !important;
+  box-shadow: 0 0.3rem 1rem  1px #ccc;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: top;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  z-index: 10;
+  width: calc(100% - 16px);
+  margin: 0 auto;
+  max-width: 27rem;
+}
+
+.btn {
+  box-shadow: none !important;
+}
+
+.btn-secondary {
+  background-color: var(--button-secondary-bg) !important;
+  border: 0;
+  color: currentColor;
+}
+
+main header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Masthead {
+  position: relative;
+  background-size: cover;
+
+  justify-content: start;
+  align-items: center;
+
+  height: calc(100vh - var(--header-height));
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .Masthead {
+    height: 85vh;
+  }
+}
+
+@media (min-width: 1400px) {
+  .Masthead {
+    height: 100vh;
+    max-height: 750px;
+  }
+}
+
+h1.title,
+h2.title {
+  font-family: var(--font-default);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+h1.title span,
+h2.title span {
+  font-weight: 400;
+  color: var(--color-secondary);
+}
+
+h3.subtitle {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.14em;
+}
+
+.About .about-image {
+  width: 100%;
+  min-height: 1px;
+  aspect-ratio: 4 / 5;
+  padding-top: 125%;
+  position: relative;
+
+  background-color: var(--black-100);
+  background-image: url(./imagem/sobre.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.About .wrapper {
+  height: 100%;
+  padding: 15px 0;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.card-grid {
+  gap: 1.2rem;
+}
+
+.Jobs .image-blur {
+  filter: blur(3px);
+}
+
+.Jobs,
+.Gradient {
+  min-height: auto;
+}
+
+.Gradient {
+  position: relative;
+}
+
+.Gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: var(--bg-gradient);
+}
+
+.Gradient>* {
+  position: relative;
+}
+
+.Contact {
+  padding-bottom: var(--header-space);
+}
+
+.Contact a {
+  color: currentColor;
+  opacity: 0.87;
+  transition-property: all;
+}
+
+.Contact a:hover {
+  color: currentColor;
+  opacity: 1;
+}
+
+.Contact a:hover > i {
+  background: var(--bg-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Contact a:hover > span {
+  text-decoration: underline;
+}
+
+.Contact a i {
+  width: 35px;
+}
+
+.resume-icon {
+  background: #ccc;
+  display: inline-block;
+  padding: 1.5rem;
+  border-radius: 50%;
+}
+
+body > footer {
+  background-color: #101010;
+  color: var(--gray);
+}
