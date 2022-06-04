@@ -188,7 +188,7 @@ h3.subtitle {
   position: relative;
 
   background-color: var(--black-100);
-  background-image: url(./imagem/sobre.png);
+  background-image: url(../image/sobre.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -248,7 +248,8 @@ h3.subtitle {
   opacity: 1;
 }
 
-.Contact a:hover > i {
+.Contact a:hover > i,
+.Contact span:hover > i {
   background: var(--bg-gradient);
   background-clip: text;
   -webkit-background-clip: text;
@@ -259,7 +260,7 @@ h3.subtitle {
   text-decoration: underline;
 }
 
-.Contact a i {
+.Contact i {
   width: 35px;
 }
 
