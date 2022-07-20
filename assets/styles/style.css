@@ -282,3 +282,24 @@ body > footer {
   background-color: #101010;
   color: var(--gray);
 }
+
+/* particles config */
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  background-color: #ffffff;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: -1;
+}
+/* END particles config */
